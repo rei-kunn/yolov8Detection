@@ -1,0 +1,5 @@
+train: aug_data/train/images
+val: aug_data/vaild/images
+
+nc: 1
+names: ['person']
