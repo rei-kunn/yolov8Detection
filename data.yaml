@@ -1,5 +1,6 @@
-train: aug_data/train/images
-val: aug_data/vaild/images
+train: /Users/rei/ml/araya/yolov8_test/data/train/images
+test: /Users/rei/ml/araya/yolov8_test/data/test/images
+val: /Users/rei/ml/araya/yolov8_test/data/val/images
 
 nc: 1
 names: ['person']
