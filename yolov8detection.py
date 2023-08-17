@@ -5,7 +5,7 @@ import numpy as np
 import torch
 # print(torch.backends.mps.is_available())
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 cap.set(cv2.CAP_PROP_FRAME_WIDTH,1920)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
 model = YOLO("yolov8m.pt")
@@ -28,7 +28,9 @@ while True:
     # print (result)
     result = result[0]
     bboxes = result.boxes.xyxy
-    # print(bboxes)
+    clas = result.boxes.cls
+    print("class:",clas)
+
 
     bboxes = np.array(result.boxes.xyxy.cpu(), dtype="int")
     classes = np.array(result.boxes.cls.cpu(), dtype="int")
